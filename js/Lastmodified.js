@@ -1,7 +1,7 @@
 var getMTime = function(url, callback) {
   var xhr = new XMLHttpRequest();
   xhr.open('HEAD', url, true); // use HEAD - we only need the headers
-	xhr.withCredentials = true;
+	// xhr.withCredentials = true;
   
   xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
   xhr.setRequestHeader('Access-Control-Allow-Methods', 'HEAD');
