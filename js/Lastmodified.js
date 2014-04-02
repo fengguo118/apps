@@ -21,19 +21,11 @@ var getMTime = function(url, callback) {
 };
 
 getMTime('http://extensivepro.com:8080/app/pos.ipa', function(mtime) {
-  if (mtime) console.log('last updated on:' + mtime);
-  
-  
-
   var timeOuter = document.getElementById('timeOuter');
-  timeOuter.innerHTML = "Last updated : " + mtime;
+  timeOuter.innerHTML = "更新于：" + mtime;
 });
 
 getMTime('http://192.168.0.103:8080/job/ExproPosCocoaPods/ws/build/pos.ipa', function(mtime) {
-  if (mtime) console.log('last updated on:' + mtime);
-  
-  
-
   var timeInner = document.getElementById('timeInner');
-  timeInner.innerHTML = "Last updated : " + mtime;
+  timeInner.innerHTML = "更新于：" + mtime;
 });
