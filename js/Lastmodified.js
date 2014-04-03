@@ -1,10 +1,6 @@
 var getMTime = function(url, callback) {
   var xhr = new XMLHttpRequest();
   xhr.open('HEAD', url, true); // use HEAD - we only need the headers
-	// xhr.withCredentials = true;
-  
-   //xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-  // xhr.setRequestHeader('Access-Control-Allow-Methods', 'HEAD');
   
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
@@ -22,10 +18,7 @@ var getMTime = function(url, callback) {
 
 getMTime('http://extensivepro.com:8080/app/pos.ipa', function(mtime) {
   var timeOuter = document.getElementById('timeOuter');
-  timeOuter.innerHTML = "更新于：" + mtime;
-});
-
-getMTime('http://192.168.0.103:8080/job/ExproPosCocoaPods/ws/build/pos.ipa', function(mtime) {
+  timeOuter.innerHTML = mtime;
   var timeInner = document.getElementById('timeInner');
-  timeInner.innerHTML = "更新于：" + mtime;
+  timeInner.innerHTML = mtime;
 });
